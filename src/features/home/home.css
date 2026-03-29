@@ -1,0 +1,476 @@
+/* Neo-Slow Landing Page - Unified Editorial Grid System */
+
+/* === Design System === */
+:root {
+  /* Container & Grid */
+  --container-max-width: 1200px;
+  --container-padding: 2rem;
+  --grid-gap: 3rem;
+  --card-gap: 2rem;
+  
+  /* Spacing Rhythm */
+  --spacing-xs: 1rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 6rem;
+  
+  /* Typography */
+  --font-size-hero: clamp(3rem, 8vw, 5rem);
+  --font-size-h2: clamp(2rem, 4vw, 2.5rem);
+  --font-size-h3: clamp(1.5rem, 3vw, 1.8rem);
+  --font-size-body: clamp(1rem, 2vw, 1.2rem);
+  --font-size-small: clamp(0.875rem, 1.5vw, 1rem);
+  
+  /* Card System */
+  --card-bg: #141414;
+  --card-padding: var(--spacing-lg);
+  --card-border: none;
+  --card-radius: 0.8rem;
+  
+  /* Accent Colors */
+  --accent-ideas: #11c10b;
+  --accent-theme: #077599;
+  --accent-contributors: #939c43;
+  --accent-journal: #f4bf5a;
+  --accent-map: #ad94ec;
+}
+
+/* === Base Layout === */
+.home-page {
+  min-height: 100vh;
+  background: #000000;
+  color: #f5f5f0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* === Universal Container === */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* === Grid System === */
+.editorial-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  padding: var(--spacing-xl) 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--card-gap);
+}
+
+/* === Hero Section === */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl) 0;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-family: var(--font-headline);
+  font-size: var(--font-size-hero);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  white-space: nowrap;
+}
+
+/* === Universal Card System === */
+.card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+  font-family: var(--font-headline);
+  font-size: var(--font-size-h2);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.3;
+}
+
+.card-subtitle {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-accent {
+  color: var(--accent-theme);
+}
+
+.card-description {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+/* === Section Cards === */
+.section-ideas .card-accent { color: var(--accent-ideas); }
+.section-theme .card-accent { color: var(--accent-theme); }
+.section-contributors .card-accent { color: var(--accent-contributors); }
+.section-journal .card-accent { color: var(--accent-journal); }
+.section-map .card-accent { color: var(--accent-map); }
+
+/* === Navigation Links === */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-body);
+  transition: color 0.2s ease;
+  margin-top: var(--spacing-sm);
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-link::after {
+  content: '→';
+  margin-left: var(--spacing-xs);
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* === Contributors Grid === */
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: var(--spacing-md) 0;
+}
+
+.contributor-image {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.contributor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.4) 0%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* === Map Image === */
+.map-image {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin: var(--spacing-md) 0;
+}
+
+.map-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === Section Images === */
+.section-image {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin: var(--spacing-md) 0;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === Journal Full Grid Section === */
+.journal-full {
+  padding: 0;
+  overflow: hidden;
+}
+
+.journal-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.journal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.journal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--card-padding);
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 0.9) 0%,
+    rgba(20, 20, 20, 0.6) 50%,
+    transparent 100%
+  );
+}
+
+.journal-content .card-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.journal-content .card-subtitle {
+  color: var(--accent-journal);
+  margin-bottom: var(--spacing-sm);
+}
+
+.journal-content .card-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.journal-content .nav-link {
+  color: var(--color-text-primary);
+}
+
+/* === Journal Clickable Link === */
+.journal-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.journal-link:hover {
+  text-decoration: none;
+}
+
+.journal-link:hover .journal-image-container {
+  transform: scale(1.02);
+}
+
+.journal-link:hover .journal-content {
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(20, 20, 20, 0.7) 50%,
+    transparent 100%
+  );
+}
+
+/* === Contributors Clickable Link === */
+.contributors-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contributors-link:hover {
+  text-decoration: none;
+}
+
+.contributors-link:hover .card {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.contributors-link:hover .contributor-image {
+  transform: scale(1.05);
+}
+
+/* === Ideas Full Grid Section === */
+.ideas-full {
+  padding: 0;
+  overflow: hidden;
+}
+
+.ideas-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ideas-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ideas-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--card-padding);
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 1.0) 0%,
+    rgba(20, 20, 20, 0.7) 50%,
+    transparent 100%
+  );
+}
+
+.ideas-content .card-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.ideas-content .card-subtitle {
+  color: var(--accent-ideas);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ideas-content .card-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ideas-content .nav-link {
+  color: var(--color-text-primary);
+}
+
+/* === Ideas Clickable Link === */
+.ideas-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ideas-link:hover {
+  text-decoration: none;
+}
+
+.ideas-link:hover .ideas-image-container {
+  transform: scale(1.02);
+}
+
+.ideas-link:hover .ideas-content {
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 1.0) 0%,
+    rgba(20, 20, 20, 0.8) 50%,
+    transparent 100%
+  );
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+    --grid-gap: 2rem;
+    --card-gap: 1.5rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    --card-padding: var(--spacing-md);
+  }
+  
+  .hero {
+    min-height: 60vh;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contributors-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .journal-image-container {
+    height: 300px;
+  }
+  
+  .ideas-image-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0.75rem;
+    --grid-gap: 1.5rem;
+    --card-gap: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    --card-padding: var(--spacing-sm);
+  }
+  
+  .contributors-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .journal-image-container {
+    height: 250px;
+  }
+  
+  .ideas-image-container {
+    height: 250px;
+  }
+}
