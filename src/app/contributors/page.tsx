@@ -43,11 +43,10 @@ export default function Contributors() {
             borderRadius: '50%',
             backgroundColor: 'var(--color-border)',
             margin: '0 auto 2rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             fontSize: '3rem',
-            color: 'var(--color-text-secondary)'
+            color: 'var(--color-text-secondary)',
+            lineHeight: '120px',
+            textAlign: 'center'
           }}>
             AK
           </div>
@@ -79,35 +78,7 @@ export default function Contributors() {
           }}>
             Exploring the intersection of bioacoustics and environmental art, creating installations that reveal hidden soundscapes of natural systems.
           </p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Bioacoustics
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Installation Art
-            </span>
-          </div>
+          
         </div>
 
         {/* Contributor 2 */}
@@ -124,11 +95,10 @@ export default function Contributors() {
             borderRadius: '50%',
             backgroundColor: 'var(--color-border)',
             margin: '0 auto 2rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             fontSize: '3rem',
-            color: 'var(--color-text-secondary)'
+            color: 'var(--color-text-secondary)',
+            lineHeight: '120px',
+            textAlign: 'center'
           }}>
             MR
           </div>
@@ -160,35 +130,7 @@ export default function Contributors() {
           }}>
             Investigating collective memory in urban spaces, designing architectural interventions that serve as repositories for shared cultural experiences.
           </p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Urban Design
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Memory Studies
-            </span>
-          </div>
+          
         </div>
 
         {/* Contributor 3 */}
@@ -205,11 +147,10 @@ export default function Contributors() {
             borderRadius: '50%',
             backgroundColor: 'var(--color-border)',
             margin: '0 auto 2rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             fontSize: '3rem',
-            color: 'var(--color-text-secondary)'
+            color: 'var(--color-text-secondary)',
+            lineHeight: '120px',
+            textAlign: 'center'
           }}>
             SC
           </div>
@@ -241,35 +182,7 @@ export default function Contributors() {
           }}>
             Developing smart materials that respond to environmental stimuli, working on adaptive structures that blur the boundary between architecture and biology.
           </p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Smart Materials
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Responsive Systems
-            </span>
-          </div>
+         
         </div>
 
         {/* Contributor 4 */}
@@ -286,11 +199,10 @@ export default function Contributors() {
             borderRadius: '50%',
             backgroundColor: 'var(--color-border)',
             margin: '0 auto 2rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             fontSize: '3rem',
-            color: 'var(--color-text-secondary)'
+            color: 'var(--color-text-secondary)',
+            lineHeight: '120px',
+            textAlign: 'center'
           }}>
             JL
           </div>
@@ -322,35 +234,7 @@ export default function Contributors() {
           }}>
             Documenting and preserving extinct digital communities, developing methodologies for archaeological excavation of virtual spaces and abandoned online worlds.
           </p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Digital Culture
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              backgroundColor: 'var(--color-bg-primary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)'
-            }}>
-              Preservation
-            </span>
-          </div>
+          
         </div>
       </div>
 
