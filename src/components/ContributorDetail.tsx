@@ -1,0 +1,173 @@
+'use client';
+
+import Link from 'next/link';
+import { Contributor } from '@/lib/contributors';
+
+interface ContributorDetailProps {
+  contributor: Contributor;
+}
+
+export default function ContributorDetail({ contributor }: ContributorDetailProps) {
+  return (
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16rem 2rem' }}>
+      <Link 
+        href="/contributors"
+        style={{
+          fontFamily: 'var(--font-label)',
+          fontSize: '1.1rem',
+          color: 'var(--color-accent)',
+          textDecoration: 'none',
+          marginBottom: '2rem',
+          display: 'inline-block',
+          opacity: 0.8
+        }}
+      >
+        ← Back to Contributors
+      </Link>
+
+      <div style={{ marginBottom: '4rem' }}>
+        <h1 style={{ 
+          fontFamily: 'var(--font-headline)', 
+          fontSize: '4rem',
+          fontWeight: '400',
+          color: 'var(--color-text-primary)',
+          marginBottom: '1rem',
+          lineHeight: 1.2
+        }}>
+          {contributor.name}
+        </h1>
+        
+        <p style={{
+          fontFamily: 'var(--font-label)',
+          fontSize: '1.3rem',
+          color: 'var(--color-accent)',
+          marginBottom: '3rem',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
+        }}>
+          {contributor.role}
+        </p>
+      </div>
+
+      {contributor.image && (
+        <div style={{
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          backgroundColor: 'var(--color-border)',
+          margin: '0 auto 4rem',
+          overflow: 'hidden'
+        }}>
+          <img
+            src={contributor.image}
+            alt={contributor.name}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              borderRadius: '50%'
+            }}
+          />
+        </div>
+      )}
+
+      <div style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '1.6rem',
+        color: 'var(--color-text-secondary)',
+        lineHeight: 1.8,
+        marginBottom: '4rem',
+        whiteSpace: 'pre-line'
+      }}>
+        {contributor.fullBio}
+      </div>
+
+      {contributor.sections && contributor.sections.length > 0 && (
+        <div style={{ marginBottom: '4rem' }}>
+          {contributor.sections.map((section, index) => (
+            <div key={index} style={{ marginBottom: '3rem' }}>
+              <h2 style={{
+                fontFamily: 'var(--font-headline)',
+                fontSize: '2.2rem',
+                fontWeight: '400',
+                color: 'var(--color-text-primary)',
+                marginBottom: '1.5rem'
+              }}>
+                {section.title}
+              </h2>
+              {Array.isArray(section.content) ? (
+                <ul style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1.5rem',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.7,
+                  paddingLeft: '2rem',
+                  listStyle: 'none'
+                }}>
+                  {section.content.map((item, itemIndex) => (
+                    <li key={itemIndex} style={{ marginBottom: '0.8rem' }}>
+                      • {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1.5rem',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.7
+                }}>
+                  {section.content}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {contributor.links && contributor.links.length > 0 && (
+        <div>
+          <h2 style={{
+            fontFamily: 'var(--font-headline)',
+            fontSize: '2.2rem',
+            fontWeight: '400',
+            color: 'var(--color-text-primary)',
+            marginBottom: '1.5rem'
+          }}>
+            Links
+          </h2>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem'
+          }}>
+            {contributor.links.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1.5rem',
+                  color: 'var(--color-accent)',
+                  textDecoration: 'none',
+                  opacity: 0.8,
+                  transition: 'opacity 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = '0.8';
+                }}
+              >
+                {link.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
