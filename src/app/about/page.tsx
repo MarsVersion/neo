@@ -4,7 +4,7 @@ export default function About() {
       <h1 style={{ 
         fontFamily: 'var(--font-headline)', 
         fontSize: '4rem',
-        fontWeight: '400',
+        fontWeight: '600',
         color: 'var(--color-text-primary)',
         marginBottom: '2rem',
         lineHeight: 1.8,
@@ -15,7 +15,8 @@ export default function About() {
 
       <div style={{
         fontFamily: 'var(--font-body)',
-        fontSize: '1rem',
+        fontSize: '1.1rem',
+        fontWeight: '500',
         color: 'var(--color-text-primary)',
         lineHeight: 1.8,
         textAlign: 'left'

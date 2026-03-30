@@ -1,355 +1,253 @@
-export default function Ideas() {
-  return (
-    <div style={{ maxWidth: '1800px', margin: '0 auto', padding: '16rem 2rem' }}>
-      <h1 style={{ 
-        fontFamily: 'var(--font-headline)', 
-        fontSize: '5rem',
-        fontWeight: '400',
-        color: 'var(--color-text-primary)',
-        marginBottom: '1rem',
-        lineHeight: 1.2
-      }}>
-        Archive
-      </h1>
-      
-      <p style={{ 
-        fontFamily: 'var(--font-body)', 
-        fontSize: '2rem',
-        color: 'var(--color-text-secondary)',
-        marginBottom: '6rem',
-        lineHeight: 1.6
-      }}>
-        A living collection of unrealized ideas, preserved as seeds for future cultivation.
-      </p>
+'use client';
 
+export default function IdeasPage() {
+  return (
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
+      <h1 style={{ fontSize: '3.025rem', lineHeight: '1.2', color: '#ffffff', marginBottom: '0.5rem' }}>Ideas</h1>
+      <p style={{ fontSize: '1.815rem', lineHeight: '1.3', color: '#ffffff', marginTop: '1rem' }}>
+        A collection of unrealized ideas and projects.
+      </p>
+      
+      {/* Ideas Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-        gap: '4rem',
-        marginBottom: '6rem'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+        gap: '2rem',
+        marginTop: '4rem'
       }}>
-        {/* Idea Entry 1 */}
-        <div style={{
-          padding: '3rem',
-          border: '1px solid var(--color-border)',
-          backgroundColor: 'var(--color-bg-secondary)',
-          borderRadius: '8px'
+        
+        {/* Project 1: Real, Symbolic, Imaginary */}
+        <a href="/ideas/real-symbolic-imaginary" style={{
+          textDecoration: 'none',
+          color: 'inherit'
         }}>
-          <h3 style={{
-            fontFamily: 'var(--font-headline)',
-            fontSize: '2.5rem',
-            fontWeight: '400',
-            color: 'var(--color-text-primary)',
-            marginBottom: '1rem'
-          }}>
-            The Sound of Growing Plants
-          </h3>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '1.5rem',
-            color: 'var(--color-text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: '2rem'
-          }}>
-            An acoustic installation that translates plant growth into soundscapes, revealing the hidden rhythms of botanical life through bio-acoustic sensors.
-          </p>
           <div style={{
-            display: 'flex',
-            gap: '1rem',
-            flexWrap: 'wrap'
+            background: '#1a1a1a',
+            border: '1px solid #2a2a2a',
+            borderRadius: '0.8rem',
+            padding: '2rem',
+            transition: 'all 0.3s ease',
+            position: 'relative',
+            overflow: 'hidden',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = '#2a2a2a';
+            e.currentTarget.style.transform = 'translateY(0)';
           }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{
+                fontSize: '1,5rem',
+                color: '#ffffff',
+                lineHeight: '1.5',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                marginBottom: '0.5rem'
+              }}>
+                Unrealized Curatorial Project (2020)
+              </div>
+              <h2 style={{
+                fontFamily: 'system-ui',
+                fontSize: '2.178rem',
+                fontWeight: '400',
+                color: '#ffffff',
+                marginBottom: '0.5rem',
+                lineHeight: '1.3'
+              }}>
+                Real, Symbolic, Imaginary
+              </h2>
+            </div>
+            
+            <div style={{
+              position: 'relative',
+              aspectRatio: '16/9',
+              borderRadius: '0.8rem',
+              overflow: 'hidden',
+              marginBottom: '1.5rem'
             }}>
-              Sound Art
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+              <img 
+                src="/assets/images/UP-RSI.jpg" 
+                alt="Real, Symbolic, Imaginary project"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+            
+            <p style={{
+              fontSize: '1.5rem',
+              fontWeight: '500',
+              color: '#ffffff',
+              lineHeight: '1.7',
+              marginBottom: '1.5rem'
             }}>
-              Biology
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+              A curatorial project exploring North Korea as reality, projection, and imagination. Based on collected materials, it examines how images are constructed when access is limited.
+            </p>
+            
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '0.5rem'
             }}>
-              Conceptual
-            </span>
+              <span style={{
+                fontSize: '1rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Mediated Reality
+              </span>
+              <span style={{
+                fontSize: '1rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Geopolitical Imagination
+              </span>
+              <span style={{
+                fontSize: '1rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Translation of Material
+              </span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        {/* Idea Entry 2 */}
-        <div style={{
-          padding: '3rem',
-          border: '1px solid var(--color-border)',
-          backgroundColor: 'var(--color-bg-secondary)',
-          borderRadius: '8px'
+        {/* Project 2: Neo-Slow Hardware */}
+        <a href="/ideas/neo-slow-hardware" style={{
+          textDecoration: 'none',
+          color: 'inherit'
         }}>
-          <h3 style={{
-            fontFamily: 'var(--font-headline)',
-            fontSize: '2.5rem',
-            fontWeight: '400',
-            color: 'var(--color-text-primary)',
-            marginBottom: '1rem'
-          }}>
-            Urban Memory Palaces
-          </h3>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '1.5rem',
-            color: 'var(--color-text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: '2rem'
-          }}>
-            A network of physical spaces throughout cities designed as collective memory repositories, where communities can store and retrieve shared experiences.
-          </p>
           <div style={{
-            display: 'flex',
-            gap: '1rem',
-            flexWrap: 'wrap'
+            background: '#1a1a1a',
+            border: '1px solid #2a2a2a',
+            borderRadius: '0.8rem',
+            padding: '2rem',
+            transition: 'all 0.3s ease',
+            position: 'relative',
+            overflow: 'hidden',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = '#2a2a2a';
+            e.currentTarget.style.transform = 'translateY(0)';
           }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{
+                fontSize: '1.056rem',
+                color: '#ffffff',
+                lineHeight: '1.5',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '0.5rem'
+              }}>
+                Unrealized Hardware Concept (2025)
+              </div>
+              <h2 style={{
+                fontFamily: 'system-ui',
+                fontSize: '2.178rem',
+                fontWeight: '400',
+                color: '#ffffff',
+                marginBottom: '0.5rem',
+                lineHeight: '1.3'
+              }}>
+                Neo-Slow Hardware
+              </h2>
+            </div>
+            
+            <div style={{
+              position: 'relative',
+              aspectRatio: '16/9',
+              borderRadius: '0.8rem',
+              overflow: 'hidden',
+              marginBottom: '1.5rem'
             }}>
-              Architecture
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+              <img 
+                src="/assets/images/UP-NS-Hardware.jpg" 
+                alt="Neo-Slow Hardware concept"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+            
+            <p style={{
+              fontSize: '1.5rem',
+              fontWeight: '500',
+              color: '#ffffff',
+              lineHeight: '1.7',
+              marginBottom: '1.5rem'
             }}>
-              Community
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
+              A ritual, pocket-sized companion that responds without interpreting. Activated by a deliberate gesture, it replaces interaction with quiet perception.
+            </p>
+            
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '0.5rem'
             }}>
-              Social Practice
-            </span>
+              <span style={{
+                fontSize: '0.96rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Calm Technology
+              </span>
+              <span style={{
+                fontSize: '0.96rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Privacy by Design
+              </span>
+              <span style={{
+                fontSize: '0.96rem',
+                color: '#4fd3ff',
+                backgroundColor: 'rgba(7, 117, 153, 0.1)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '0.25rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Non-Interpretive AI
+              </span>
+            </div>
           </div>
-        </div>
-
-        {/* Idea Entry 3 */}
-        <div style={{
-          padding: '3rem',
-          border: '1px solid var(--color-border)',
-          backgroundColor: 'var(--color-bg-secondary)',
-          borderRadius: '8px'
-        }}>
-          <h3 style={{
-            fontFamily: 'var(--font-headline)',
-            fontSize: '2.5rem',
-            fontWeight: '400',
-            color: 'var(--color-text-primary)',
-            marginBottom: '1rem'
-          }}>
-            Liquid Architecture
-          </h3>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '1.5rem',
-            color: 'var(--color-text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: '2rem'
-          }}>
-            Buildings that respond to environmental conditions by changing their physical structure, creating spaces that breathe and adapt like living organisms.
-          </p>
-          <div style={{
-            display: 'flex',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Smart Materials
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Responsive Design
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Research
-            </span>
-          </div>
-        </div>
-
-        {/* Idea Entry 4 */}
-        <div style={{
-          padding: '3rem',
-          border: '1px solid var(--color-border)',
-          backgroundColor: 'var(--color-bg-secondary)',
-          borderRadius: '8px'
-        }}>
-          <h3 style={{
-            fontFamily: 'var(--font-headline)',
-            fontSize: '2.5rem',
-            fontWeight: '400',
-            color: 'var(--color-text-primary)',
-            marginBottom: '1rem'
-          }}>
-            Digital Archaeology
-          </h3>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '1.5rem',
-            color: 'var(--color-text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: '2rem'
-          }}>
-            Methods for excavating and preserving abandoned digital spaces, creating museums of forgotten online communities and extinct virtual worlds.
-          </p>
-          <div style={{
-            display: 'flex',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Digital Culture
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-accent)',
-              backgroundColor: 'rgba(212, 165, 116, 0.1)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Preservation
-            </span>
-            <span style={{
-              fontFamily: 'var(--font-label)',
-              fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px'
-            }}>
-              Archive
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Filter Section */}
-      <div style={{
-        borderTop: '1px solid var(--color-border)',
-        paddingTop: '4rem',
-        textAlign: 'center'
-      }}>
-        <p style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '1.5rem',
-          color: 'var(--color-text-secondary)',
-          marginBottom: '2rem'
-        }}>
-          Browse by category or search the archive
-        </p>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          flexWrap: 'wrap'
-        }}>
-          <button style={{
-            fontFamily: 'var(--font-label)',
-            fontSize: '1.2rem',
-            color: 'var(--color-text-primary)',
-            backgroundColor: 'transparent',
-            border: '1px solid var(--color-border)',
-            padding: '1rem 2rem',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}>
-            All Ideas
-          </button>
-          <button style={{
-            fontFamily: 'var(--font-label)',
-            fontSize: '1.2rem',
-            color: 'var(--color-text-secondary)',
-            backgroundColor: 'transparent',
-            border: '1px solid var(--color-border)',
-            padding: '1rem 2rem',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}>
-            Art & Design
-          </button>
-          <button style={{
-            fontFamily: 'var(--font-label)',
-            fontSize: '1.2rem',
-            color: 'var(--color-text-secondary)',
-            backgroundColor: 'transparent',
-            border: '1px solid var(--color-border)',
-            padding: '1rem 2rem',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}>
-            Technology
-          </button>
-          <button style={{
-            fontFamily: 'var(--font-label)',
-            fontSize: '1.2rem',
-            color: 'var(--color-text-secondary)',
-            backgroundColor: 'transparent',
-            border: '1px solid var(--color-border)',
-            padding: '1rem 2rem',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}>
-            Research
-          </button>
-        </div>
+        </a>
+        
       </div>
     </div>
   );

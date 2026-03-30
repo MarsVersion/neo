@@ -10,7 +10,7 @@ export default function Navbar() {
       </div>
       
       <div className={styles.navbarLinks}>
-        <a href="/ideas">Archive</a>
+        <a href="/ideas">Ideas</a>
         <a href="/contributors">Contributors</a>
         <a href="/themes">Themes</a>
         <a href="/journal">Journal</a>

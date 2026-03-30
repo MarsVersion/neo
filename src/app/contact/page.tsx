@@ -6,7 +6,7 @@ export default function Contact() {
       <h1 style={{ 
         fontFamily: 'var(--font-headline)', 
         fontSize: '5rem',
-        fontWeight: '400',
+        fontWeight: '600',
         color: 'var(--color-text-primary)',
         marginBottom: '1rem',
         lineHeight: 1.2,
@@ -18,6 +18,7 @@ export default function Contact() {
       <p style={{ 
         fontFamily: 'var(--font-body)', 
         fontSize: '2rem',
+        fontWeight: '500',
         color: 'var(--color-text-secondary)',
         marginBottom: '6rem',
         lineHeight: 1.6,

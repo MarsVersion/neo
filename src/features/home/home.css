@@ -31,7 +31,7 @@
   
   /* Accent Colors */
   --accent-ideas: #11c10b;
-  --accent-theme: #077599;
+  --accent-theme: #53c5eb;
   --accent-contributors: #939c43;
   --accent-journal: #f4bf5a;
   --accent-map: #ad94ec;
@@ -40,10 +40,16 @@
 /* === Base Layout === */
 .home-page {
   min-height: 100vh;
-  background: #000000;
+  background: rgba(10, 12, 20, 0.3); /* Very dark blue with transparency */
   color: #f5f5f0;
   font-family: var(--font-body);
   line-height: 1.6;
+  position: relative;
+}
+
+/* Text enhancement for ambient background */
+.home-page * {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* === Universal Container === */
