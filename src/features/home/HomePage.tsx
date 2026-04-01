@@ -101,20 +101,6 @@ export default function HomePage() {
             </a>
           </section>
 
-          {/* Map Section */}
-          <section className="section-map">
-            <div className="card">
-              <div className="card-header">
-                <h2 className="card-title">Map</h2>
-                <p className="card-subtitle card-accent">Latent Futures, Funding Gatekeeping</p>
-              </div>
-              <p className="card-description">
-                Visualizing the landscape of unrealized ideas, mapping connections between concepts and the systems that support or constrain their realization.
-              </p>
-              <a href="/map" className="nav-link">Explore Map</a>
-            </div>
-          </section>
-
         </div>
       </div>
     </div>

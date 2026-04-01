@@ -113,6 +113,9 @@ export const contributors: Contributor[] = [
         ]
       }
     ],
+    links: [
+      { title: 'Website Li Zhenhua', url: 'https://www.lizhenhua.work/about' }
+    ],
     image: '/assets/images/Contributors images/BM Li Zhenhua.png'
   },
   {
@@ -148,6 +151,9 @@ export const contributors: Contributor[] = [
           'Faena Arts Center, Buenos Aires (2013)'
         ]
       }
+    ],
+    links: [
+      { title: 'Website AES + F', url: 'https://aesf.art/' }
     ],
     image: '/assets/images/Contributors images/AESF.jpg'
   }

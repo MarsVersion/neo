@@ -26,13 +26,35 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
       </Link>
 
       <div style={{ marginBottom: '4rem' }}>
+        {contributor.image && (
+          <div style={{
+            width: '200px',
+            height: '200px',
+            borderRadius: '10%',
+            backgroundColor: 'var(--color-border)',
+            margin: '0 auto 3rem',
+            overflow: 'hidden'
+          }}>
+            <img
+              src={contributor.image}
+              alt={contributor.name}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
+          </div>
+        )}
+        
         <h1 style={{ 
           fontFamily: 'var(--font-headline)', 
           fontSize: '4rem',
           fontWeight: '400',
           color: 'var(--color-text-primary)',
           marginBottom: '1rem',
-          lineHeight: 1.2
+          lineHeight: 1.2,
+          textAlign: 'left'
         }}>
           {contributor.name}
         </h1>
@@ -43,43 +65,24 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
           color: 'var(--color-accent)',
           marginBottom: '3rem',
           textTransform: 'uppercase',
-          letterSpacing: '0.05em'
+          letterSpacing: '0.05em',
+          textAlign: 'left'
         }}>
           {contributor.role}
         </p>
-      </div>
-
-      {contributor.image && (
+        
         <div style={{
-          width: '200px',
-          height: '200px',
-          borderRadius: '50%',
-          backgroundColor: 'var(--color-border)',
-          margin: '0 auto 4rem',
-          overflow: 'hidden'
+          fontFamily: 'var(--font-body)',
+          fontSize: '1.6rem',
+          color: 'var(--color-text-secondary)',
+          lineHeight: 1.8,
+          marginBottom: '4rem',
+          whiteSpace: 'pre-line',
+          textAlign: 'left',
+          maxWidth: '800px'
         }}>
-          <img
-            src={contributor.image}
-            alt={contributor.name}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              borderRadius: '50%'
-            }}
-          />
+          {contributor.fullBio}
         </div>
-      )}
-
-      <div style={{
-        fontFamily: 'var(--font-body)',
-        fontSize: '1.6rem',
-        color: 'var(--color-text-secondary)',
-        lineHeight: 1.8,
-        marginBottom: '4rem',
-        whiteSpace: 'pre-line'
-      }}>
-        {contributor.fullBio}
       </div>
 
       {contributor.sections && contributor.sections.length > 0 && (

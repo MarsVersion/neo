@@ -1,5 +1,6 @@
 import { contributors } from '@/lib/contributors';
-import ContributorCard from '@/components/ContributorCard';
+import ChromaContributorCard from '@/components/ChromaContributorCard';
+import './contributors.css';
 
 export default function Contributors() {
   return (
@@ -26,14 +27,9 @@ export default function Contributors() {
         Minds from various disciplines contributing to the cultivation of unrealized ideas.
       </p>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '4rem',
-        marginBottom: '6rem'
-      }}>
+      <div className="chroma-grid">
         {contributors.map((contributor) => (
-          <ContributorCard
+          <ChromaContributorCard
             key={contributor.slug}
             contributor={contributor}
           />
@@ -48,37 +44,38 @@ export default function Contributors() {
       }}>
         <h3 style={{
           fontFamily: 'var(--font-headline)',
-          fontSize: '3rem',
+          fontSize: '2.2rem',
           fontWeight: '400',
           color: 'var(--color-text-primary)',
-          marginBottom: '2rem'
+          marginBottom: '1rem'
         }}>
-          Join the Community
+          Join the Archive
         </h3>
         <p style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '1.5rem',
+          fontSize: '1.4rem',
           color: 'var(--color-text-secondary)',
-          lineHeight: 1.7,
-          marginBottom: '3rem',
-          maxWidth: '600px',
-          margin: '0 auto 3rem auto'
+          lineHeight: 1.6,
+          marginBottom: '2rem'
         }}>
-          Neo-Slow is a collaborative platform for researchers, artists, and thinkers exploring the space between ideas and realization.
+          Selected contributions may be developed into published entries.
         </p>
-        <button style={{
-          fontFamily: 'var(--font-label)',
-          fontSize: '1.5rem',
-          color: 'var(--color-text-primary)',
-          backgroundColor: 'transparent',
-          border: '1px solid var(--color-accent)',
-          padding: '1.5rem 3rem',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          transition: 'all 0.2s ease'
-        }}>
-          Become a Contributor
-        </button>
+        <div style={{ display: 'inline-block' }}>
+          <a 
+            href="mailto:contact@neo-slow.com"
+            style={{
+              fontFamily: 'var(--font-label)',
+              fontSize: '1.1rem',
+              color: 'var(--color-accent)',
+              textDecoration: 'none',
+              opacity: 0.8,
+              transition: 'opacity 0.2s ease'
+            }}
+            className="submit-link"
+          >
+            Submit an Idea
+          </a>
+        </div>
       </div>
     </div>
   );
