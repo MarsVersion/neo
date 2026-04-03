@@ -1,9 +1,10 @@
-import { themeSections } from '@/lib/themes';
-import ThemeLink from '@/components/ThemeLink';
+import { themes } from '@/lib/themesData';
+import ChromaThemeCard from '@/components/ChromaThemeCard';
+import './themes.css';
 
 export default function Themes() {
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '16rem 2rem' }}>
+    <div style={{ maxWidth: '1800px', margin: '0 auto', padding: '16rem 2rem' }}>
       <h1 style={{ 
         fontFamily: 'var(--font-headline)', 
         fontSize: '5rem',
@@ -21,36 +22,61 @@ export default function Themes() {
         fontWeight: '500',
         color: 'var(--color-text-secondary)',
         marginBottom: '6rem',
-        lineHeight: 1.6,
-        opacity: 0.7
+        lineHeight: 1.6
       }}>
         Ways of reading ideas.
       </p>
 
-      {themeSections.map((section, index) => (
-        <div key={section.title} style={{ marginBottom: index === themeSections.length - 1 ? '0' : '5rem' }}>
-          <h2 style={{
-            fontFamily: 'var(--font-label)',
-            fontSize: '1.2rem',
-            color: 'var(--color-accent)',
-            marginBottom: '2rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            opacity: 0.8
-          }}>
-            {section.title}
-          </h2>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {section.themes.map((theme) => (
-              <ThemeLink
-                key={theme.slug}
-                theme={theme}
-              />
-            ))}
-          </div>
+      <div className="chroma-grid">
+        {themes.map((theme) => (
+          <ChromaThemeCard
+            key={theme.slug}
+            theme={theme}
+          />
+        ))}
+      </div>
+
+      {/* Call to Action */}
+      <div style={{
+        borderTop: '1px solid var(--color-border)',
+        paddingTop: '4rem',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          fontFamily: 'var(--font-headline)',
+          fontSize: '2.2rem',
+          fontWeight: '400',
+          color: 'var(--color-text-primary)',
+          marginBottom: '1rem'
+        }}>
+          Explore Themes
+        </h3>
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '1.4rem',
+          color: 'var(--color-text-secondary)',
+          lineHeight: 1.6,
+          marginBottom: '2rem'
+        }}>
+          Each theme offers a unique perspective on unrealized ideas.
+        </p>
+        <div style={{ display: 'inline-block' }}>
+          <a 
+            href="/ideas"
+            style={{
+              fontFamily: 'var(--font-label)',
+              fontSize: '1.1rem',
+              color: 'var(--color-accent)',
+              textDecoration: 'none',
+              opacity: 0.8,
+              transition: 'opacity 0.2s ease'
+            }}
+            className="submit-link"
+          >
+            Browse Ideas
+          </a>
         </div>
-      ))}
+      </div>
     </div>
   );
 }

@@ -1,253 +1,81 @@
-'use client';
+import { ideas } from '@/lib/ideasData';
+import ChromaIdeaCard from '@/components/ChromaIdeaCard';
+import './ideas.css';
 
 export default function IdeasPage() {
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
-      <h1 style={{ fontSize: '3.025rem', lineHeight: '1.2', color: '#ffffff', marginBottom: '0.5rem' }}>Ideas</h1>
-      <p style={{ fontSize: '1.815rem', lineHeight: '1.3', color: '#ffffff', marginTop: '1rem' }}>
-        A collection of unrealized ideas and projects.
-      </p>
-      
-      {/* Ideas Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '2rem',
-        marginTop: '4rem'
+    <div style={{ maxWidth: '1800px', margin: '0 auto', padding: '16rem 2rem' }}>
+      <h1 style={{ 
+        fontFamily: 'var(--font-headline)', 
+        fontSize: '5rem',
+        fontWeight: '600',
+        color: 'var(--color-text-primary)',
+        marginBottom: '1rem',
+        lineHeight: 1.2
       }}>
-        
-        {/* Project 1: Real, Symbolic, Imaginary */}
-        <a href="/ideas/real-symbolic-imaginary" style={{
-          textDecoration: 'none',
-          color: 'inherit'
-        }}>
-          <div style={{
-            background: '#1a1a1a',
-            border: '1px solid #2a2a2a',
-            borderRadius: '0.8rem',
-            padding: '2rem',
-            transition: 'all 0.3s ease',
-            position: 'relative',
-            overflow: 'hidden',
-            cursor: 'pointer'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#2a2a2a';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}>
-            <div style={{ marginBottom: '1.5rem' }}>
-              <div style={{
-                fontSize: '1,5rem',
-                color: '#ffffff',
-                lineHeight: '1.5',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '0.5rem'
-              }}>
-                Unrealized Curatorial Project (2020)
-              </div>
-              <h2 style={{
-                fontFamily: 'system-ui',
-                fontSize: '2.178rem',
-                fontWeight: '400',
-                color: '#ffffff',
-                marginBottom: '0.5rem',
-                lineHeight: '1.3'
-              }}>
-                Real, Symbolic, Imaginary
-              </h2>
-            </div>
-            
-            <div style={{
-              position: 'relative',
-              aspectRatio: '16/9',
-              borderRadius: '0.8rem',
-              overflow: 'hidden',
-              marginBottom: '1.5rem'
-            }}>
-              <img 
-                src="/assets/images/UP-RSI.jpg" 
-                alt="Real, Symbolic, Imaginary project"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
-                }}
-              />
-            </div>
-            
-            <p style={{
-              fontSize: '1.5rem',
-              fontWeight: '500',
-              color: '#ffffff',
-              lineHeight: '1.7',
-              marginBottom: '1.5rem'
-            }}>
-              A curatorial project exploring North Korea as reality, projection, and imagination. Based on collected materials, it examines how images are constructed when access is limited.
-            </p>
-            
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.5rem'
-            }}>
-              <span style={{
-                fontSize: '1rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Mediated Reality
-              </span>
-              <span style={{
-                fontSize: '1rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Geopolitical Imagination
-              </span>
-              <span style={{
-                fontSize: '1rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Translation of Material
-              </span>
-            </div>
-          </div>
-        </a>
+        Ideas
+      </h1>
+      
+      <p style={{ 
+        fontFamily: 'var(--font-body)', 
+        fontSize: '2rem',
+        fontWeight: '500',
+        color: 'var(--color-text-secondary)',
+        marginBottom: '6rem',
+        lineHeight: 1.6
+      }}>
+        A curated archive of unrealized projects and concepts.
+      </p>
 
-        {/* Project 2: Neo-Slow Hardware */}
-        <a href="/ideas/neo-slow-hardware" style={{
-          textDecoration: 'none',
-          color: 'inherit'
+      <div className="chroma-grid">
+        {ideas.map((idea) => (
+          <ChromaIdeaCard
+            key={idea.slug}
+            idea={idea}
+          />
+        ))}
+      </div>
+
+      {/* Call to Action */}
+      <div style={{
+        borderTop: '1px solid var(--color-border)',
+        paddingTop: '4rem',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          fontFamily: 'var(--font-headline)',
+          fontSize: '2.2rem',
+          fontWeight: '400',
+          color: 'var(--color-text-primary)',
+          marginBottom: '1rem'
         }}>
-          <div style={{
-            background: '#1a1a1a',
-            border: '1px solid #2a2a2a',
-            borderRadius: '0.8rem',
-            padding: '2rem',
-            transition: 'all 0.3s ease',
-            position: 'relative',
-            overflow: 'hidden',
-            cursor: 'pointer'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#2a2a2a';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}>
-            <div style={{ marginBottom: '1.5rem' }}>
-              <div style={{
-                fontSize: '1.056rem',
-                color: '#ffffff',
-                lineHeight: '1.5',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                marginBottom: '0.5rem'
-              }}>
-                Unrealized Hardware Concept (2025)
-              </div>
-              <h2 style={{
-                fontFamily: 'system-ui',
-                fontSize: '2.178rem',
-                fontWeight: '400',
-                color: '#ffffff',
-                marginBottom: '0.5rem',
-                lineHeight: '1.3'
-              }}>
-                Neo-Slow Hardware
-              </h2>
-            </div>
-            
-            <div style={{
-              position: 'relative',
-              aspectRatio: '16/9',
-              borderRadius: '0.8rem',
-              overflow: 'hidden',
-              marginBottom: '1.5rem'
-            }}>
-              <img 
-                src="/assets/images/UP-NS-Hardware.jpg" 
-                alt="Neo-Slow Hardware concept"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
-                }}
-              />
-            </div>
-            
-            <p style={{
-              fontSize: '1.5rem',
-              fontWeight: '500',
-              color: '#ffffff',
-              lineHeight: '1.7',
-              marginBottom: '1.5rem'
-            }}>
-              A ritual, pocket-sized companion that responds without interpreting. Activated by a deliberate gesture, it replaces interaction with quiet perception.
-            </p>
-            
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.5rem'
-            }}>
-              <span style={{
-                fontSize: '0.96rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Calm Technology
-              </span>
-              <span style={{
-                fontSize: '0.96rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Privacy by Design
-              </span>
-              <span style={{
-                fontSize: '0.96rem',
-                color: '#4fd3ff',
-                backgroundColor: 'rgba(7, 117, 153, 0.1)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '0.25rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Non-Interpretive AI
-              </span>
-            </div>
-          </div>
-        </a>
-        
+          Submit an Idea
+        </h3>
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '1.4rem',
+          color: 'var(--color-text-secondary)',
+          lineHeight: 1.6,
+          marginBottom: '2rem'
+        }}>
+          Selected contributions may be developed into published entries.
+        </p>
+        <div style={{ display: 'inline-block' }}>
+          <a 
+            href="mailto:contact@neo-slow.com"
+            style={{
+              fontFamily: 'var(--font-label)',
+              fontSize: '1.1rem',
+              color: 'var(--color-accent)',
+              textDecoration: 'none',
+              opacity: 0.8,
+              transition: 'opacity 0.2s ease'
+            }}
+            className="submit-link"
+          >
+            Contact Us
+          </a>
+        </div>
       </div>
     </div>
   );
