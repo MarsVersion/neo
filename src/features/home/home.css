@@ -74,11 +74,11 @@
 
 /* === Hero Section === */
 .hero {
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xxl) 0;
+  padding: calc(var(--spacing-xxl) / 2) 0;
 }
 
 .hero-content {
@@ -435,7 +435,7 @@
   
   .hero {
     min-height: 60vh;
-    padding: var(--spacing-xl) 0;
+    padding: calc(var(--spacing-xl) / 2) 0;
   }
   
   .cards-grid {

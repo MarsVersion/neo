@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Theme } from '@/lib/themesData';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface ChromaThemeCardProps {
   theme: Theme;
@@ -10,8 +10,15 @@ interface ChromaThemeCardProps {
 
 export default function ChromaThemeCard({ theme }: ChromaThemeCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [imageExists, setImageExists] = useState(false);
 
   useEffect(() => {
+    // Check if image exists
+    const img = new Image();
+    img.onload = () => setImageExists(true);
+    img.onerror = () => setImageExists(false);
+    img.src = theme.image;
+
     const card = cardRef.current;
     if (!card) return;
 
@@ -36,7 +43,7 @@ export default function ChromaThemeCard({ theme }: ChromaThemeCardProps) {
       card.removeEventListener('mousemove', handleMouseMove);
       card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [theme.image]);
 
   return (
     <Link
@@ -50,16 +57,14 @@ export default function ChromaThemeCard({ theme }: ChromaThemeCardProps) {
         <div className="chroma-overlay"></div>
         <div className="chroma-fade"></div>
         
-        <div className="chroma-img-wrapper">
-          <img 
-            src={theme.image} 
-            alt={theme.name}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-            }}
-          />
-        </div>
+        {imageExists && (
+          <div className="chroma-img-wrapper">
+            <img 
+              src={theme.image} 
+              alt={theme.name}
+            />
+          </div>
+        )}
         
         <div className="chroma-info">
           <div className="name">{theme.name}</div>
