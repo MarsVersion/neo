@@ -1,0 +1,199 @@
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 4rem;
+}
+
+.bubbles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.bubbleLink {
+  text-decoration: none;
+  display: inline-flex;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.bubbleLink:hover {
+  z-index: 10;
+}
+
+/* Outer shell: soft glow + sculptural depth (motion applied here) */
+.bubble {
+  --bubble-rgb: 30 80 50;
+  border-radius: 9999px;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  /* Soft green-tinted outer glow + depth */
+  box-shadow:
+    0 0 0 1px rgb(var(--bubble-rgb) / 0.12),
+    0 0 28px rgb(var(--bubble-rgb) / 0.22),
+    0 0 52px rgb(var(--bubble-rgb) / 0.14),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+/*
+ * Side bubbles (Ideas, Journal): ~+16% vs prior 280px → 325px max.
+ * Mobile min scales up so composition stays proportional.
+ */
+.bubbleSize280 {
+  width: clamp(244px, 82vw, 325px);
+  height: clamp(244px, 82vw, 325px);
+}
+
+/*
+ * Center (Contributors): ~+16% vs prior 320px → 370px max.
+ */
+.bubbleSize320 {
+  width: clamp(278px, 90vw, 370px);
+  height: clamp(278px, 90vw, 370px);
+}
+
+.bubbleSize320 .bubbleLabel {
+  font-size: clamp(1.2rem, 2.4vw, 2.05rem);
+}
+
+/* Diffused sphere body: radial fill + very light edge blur */
+.bubbleFill {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* Brighter translucent center → darker softer rim */
+  background:
+    radial-gradient(
+      120% 120% at 30% 28%,
+      rgb(255 255 255 / 0.14) 0%,
+      rgb(255 255 255 / 0) 42%
+    ),
+    radial-gradient(
+      circle at 42% 38%,
+      rgb(var(--bubble-rgb) / 0.38) 0%,
+      rgb(var(--bubble-rgb) / 0.62) 48%,
+      rgb(var(--bubble-rgb) / 0.78) 72%,
+      rgb(var(--bubble-rgb) / 0.52) 100%
+    );
+  filter: blur(1.25px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0.88;
+}
+
+/* Inner crisp ring so label stays sharp while outer stays soft */
+.bubbleInner {
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      85% 85% at 32% 30%,
+      rgb(255 255 255 / 0.12) 0%,
+      rgb(255 255 255 / 0) 55%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgb(var(--bubble-rgb) / 0.52) 0%,
+      rgb(var(--bubble-rgb) / 0.72) 62%,
+      rgb(var(--bubble-rgb) / 0.58) 100%
+    );
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1);
+}
+
+.bubbleLabel {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-align: center;
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(0, 0, 0, 0.2);
+}
+
+.bubble:hover {
+  box-shadow:
+    0 0 0 1px rgb(var(--bubble-rgb) / 0.18),
+    0 0 36px rgb(var(--bubble-rgb) / 0.3),
+    0 0 64px rgb(var(--bubble-rgb) / 0.18),
+    0 22px 50px rgba(0, 0, 0, 0.42);
+  filter: brightness(1.05);
+}
+
+/* Desktop: triangular composition; overlap ~7–9% of ~325px side diameter */
+@media (min-width: 900px) {
+  .bubbles {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem 0 2.75rem;
+    max-width: 1280px;
+    margin-inline: auto;
+  }
+
+  /* Center link stacks above side bubbles when circles overlap */
+  .bubbles > .bubbleLink:nth-child(1) {
+    z-index: 1;
+  }
+
+  .bubbles > .bubbleLink:nth-child(2) {
+    z-index: 2;
+  }
+
+  .bubbles > .bubbleLink:nth-child(3) {
+    z-index: 1;
+  }
+
+  .bubblePosition1 {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 12px;
+    margin-inline-end: -28px;
+  }
+
+  .bubblePosition2 {
+    grid-column: 2;
+    grid-row: 2;
+    /* Pull up toward row-1 neighbors for vertical overlap */
+    margin-top: -46px;
+    margin-inline: -28px;
+  }
+
+  .bubblePosition3 {
+    grid-column: 3;
+    grid-row: 1;
+    margin-top: 16px;
+    margin-inline-start: -28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    transition: none;
+  }
+}

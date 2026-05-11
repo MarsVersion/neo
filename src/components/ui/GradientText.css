@@ -57,12 +57,3 @@
   letter-spacing: inherit;
   font-weight: inherit;
 }
-
-/* Ensure gradient text works within hero headline */
-.hero-headline .animated-gradient-text {
-  font-family: var(--font-headline);
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  color: transparent; /* Override parent color for gradient */
-}
