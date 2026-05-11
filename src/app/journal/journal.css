@@ -1,0 +1,10 @@
+/* Journal listing: all text white (cards reuse Ideas chroma; .role is #ccc there). */
+.journal-page h1,
+.journal-page > p {
+  color: #ffffff !important;
+}
+
+.journal-page .chroma-info .name,
+.journal-page .chroma-info .role {
+  color: #ffffff !important;
+}

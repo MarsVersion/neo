@@ -1,24 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { Theme } from '@/lib/themesData';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { JournalEntry } from '@/lib/journalData';
 
-interface ChromaThemeCardProps {
-  theme: Theme;
+interface ChromaJournalCardProps {
+  entry: JournalEntry;
 }
 
-export default function ChromaThemeCard({ theme }: ChromaThemeCardProps) {
+export default function ChromaJournalCard({ entry }: ChromaJournalCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [imageExists, setImageExists] = useState(false);
 
   useEffect(() => {
-    // Check if image exists
-    const img = new Image();
-    img.onload = () => setImageExists(true);
-    img.onerror = () => setImageExists(false);
-    img.src = theme.image;
-
     const card = cardRef.current;
     if (!card) return;
 
@@ -43,39 +36,37 @@ export default function ChromaThemeCard({ theme }: ChromaThemeCardProps) {
       card.removeEventListener('mousemove', handleMouseMove);
       card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [theme.image]);
+  }, []);
 
   return (
     <Link
-      href={`/themes/${theme.slug}`}
+      href={`/journal/${entry.slug}`}
       style={{
         textDecoration: 'none',
         color: 'inherit'
       }}
     >
-      <div className="chroma-card" ref={cardRef}>
+      <div className="chroma-card chroma-card--has-subtitle" ref={cardRef}>
         <div className="chroma-overlay"></div>
         <div className="chroma-fade"></div>
-        
-        {imageExists && (
-          <div className="chroma-img-wrapper">
-            <img 
-              src={theme.image} 
-              alt={theme.name}
-            />
-          </div>
-        )}
-        
+
+        <div className="chroma-img-wrapper">
+          <img
+            src={entry.image}
+            alt={entry.title}
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
+          />
+        </div>
+
         <div className="chroma-info">
-          <div className="name">{theme.name}</div>
-          <div className="role">{theme.description}</div>
-          <div className="tags">
-            {theme.tags.map((tag, index) => (
-              <span key={index} className="tag">{tag}</span>
-            ))}
-          </div>
+          <div className="name">{entry.title}</div>
+          <div className="role chroma-card-subtitle">{entry.subtitle}</div>
         </div>
       </div>
     </Link>
   );
 }
+

@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 500px);
+  grid-auto-rows: 500px;
   gap: 1.5rem;
   max-width: 900px;
   margin: 0 auto;
@@ -78,11 +79,24 @@
 .chroma-img-wrapper {
   position: relative;
   z-index: 1;
+  flex: 0 0 320px;
   height: 320px;
   padding: 10px;
   box-sizing: border-box;
   background: transparent;
   transition: background 0.3s ease;
+}
+
+/* Extra text block (subtitle + type/year): shorter image, taller info so nothing clips. */
+.chroma-card--has-subtitle .chroma-img-wrapper {
+  flex: 0 0 275px;
+  height: 275px;
+}
+
+.chroma-card--has-subtitle .chroma-info {
+  height: auto;
+  flex: 1 1 225px;
+  min-height: 225px;
 }
 
 .chroma-img-wrapper img {

@@ -32,20 +32,6 @@ export default function HomePage() {
             </a>
           </section>
 
-          {/* Theme Section */}
-          <section className="section-theme">
-            <div className="card">
-              <div className="card-header">
-                <h2 className="card-title">Theme</h2>
-                <p className="card-subtitle card-accent">Art, Technology • Speculative thinking</p>
-              </div>
-              <p className="card-description">
-                Cross-disciplinary exploration where artistic vision meets technological possibility, creating space for concepts that challenge conventional boundaries.
-              </p>
-              <a href="/themes" className="nav-link">View Themes</a>
-            </div>
-          </section>
-
           {/* Contributors Section */}
           <section className="section-contributors">
             <a href="/contributors" className="contributors-link">

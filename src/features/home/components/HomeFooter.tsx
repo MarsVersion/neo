@@ -54,9 +54,6 @@ export default function HomeFooter() {
                 <a href="/contributors" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   Contributors
                 </a>
-                <a href="/themes" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
-                  Themes
-                </a>
               </div>
             </div>
             

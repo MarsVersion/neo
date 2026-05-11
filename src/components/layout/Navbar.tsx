@@ -11,7 +11,6 @@ export default function Navbar() {
       
       <div className={styles.navbarLinks}>
         <a href="/ideas">Ideas</a>
-        <a href="/themes">Themes</a>
         <a href="/contributors">Contributors</a>
         <a href="/journal">Journal</a>
         <a href="/about">About</a>

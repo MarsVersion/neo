@@ -46,7 +46,10 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
         color: 'inherit'
       }}
     >
-      <div className="chroma-card" ref={cardRef}>
+      <div
+        className={idea.subtitle ? 'chroma-card chroma-card--has-subtitle' : 'chroma-card'}
+        ref={cardRef}
+      >
         <div className="chroma-overlay"></div>
         <div className="chroma-fade"></div>
         
@@ -63,6 +66,9 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
         
         <div className="chroma-info">
           <div className="name">{idea.title}</div>
+          {idea.subtitle ? (
+            <div className="role chroma-card-subtitle">{idea.subtitle}</div>
+          ) : null}
           <div className="role">{idea.type} ({idea.year})</div>
           <div className="tags">
             {idea.tags.map((tag, index) => (
