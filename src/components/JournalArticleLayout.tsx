@@ -1,7 +1,10 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import SectionBackLink from '@/components/SectionBackLink';
 import styles from './JournalArticleLayout.module.css';
+
+const DEFAULT_PARENT = { href: '/journal', label: 'Journal' } as const;
 
 export type JournalArticleLayoutProps = {
   title: string;
@@ -11,6 +14,8 @@ export type JournalArticleLayoutProps = {
   metadata?: ReactNode;
   cover: { src: string; alt: string };
   children: ReactNode;
+  /** Back link below article body. Pass `null` to hide. */
+  parentSection?: { href: string; label: string } | null;
 };
 
 export default function JournalArticleLayout({
@@ -19,6 +24,7 @@ export default function JournalArticleLayout({
   metadata,
   cover,
   children,
+  parentSection = DEFAULT_PARENT,
 }: JournalArticleLayoutProps) {
   const hasHeader = Boolean(metadata || deck);
 
@@ -43,6 +49,14 @@ export default function JournalArticleLayout({
         </figure>
 
         <div className={styles.body}>{children}</div>
+
+        {parentSection ? (
+          <div className={styles.backBelowBody}>
+            <SectionBackLink href={parentSection.href}>
+              {parentSection.label}
+            </SectionBackLink>
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -503,6 +503,9 @@ export default function NeoSlowHardware() {
         <a 
           href="/ideas" 
           style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.35rem',
             fontSize: '1rem',
             color: '#077599',
             textDecoration: 'none',
@@ -515,7 +518,10 @@ export default function NeoSlowHardware() {
             e.currentTarget.style.color = '#077599';
           }}
         >
-          ← Back to Ideas
+          <span style={{ fontSize: '2em', lineHeight: 1 }} aria-hidden>
+            ←
+          </span>
+          Back to Ideas
         </a>
       </div>
     </div>

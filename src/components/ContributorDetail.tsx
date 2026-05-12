@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import SectionBackLink from '@/components/SectionBackLink';
 import { Contributor } from '@/lib/contributors';
 
 interface ContributorDetailProps {
@@ -10,21 +10,6 @@ interface ContributorDetailProps {
 export default function ContributorDetail({ contributor }: ContributorDetailProps) {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16rem 2rem' }}>
-      <Link 
-        href="/contributors"
-        style={{
-          fontFamily: 'var(--font-label)',
-          fontSize: '1.1rem',
-          color: 'var(--color-accent)',
-          textDecoration: 'none',
-          marginBottom: '2rem',
-          display: 'inline-block',
-          opacity: 0.8
-        }}
-      >
-        ← Back to Contributors
-      </Link>
-
       <div style={{ marginBottom: '4rem' }}>
         {contributor.image && (
           <div style={{
@@ -171,6 +156,16 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
           </div>
         </div>
       )}
+
+      <div
+        style={{
+          borderTop: '1px solid #2a2a2a',
+          paddingTop: '2rem',
+          marginTop: '3rem'
+        }}
+      >
+        <SectionBackLink href="/contributors">Contributors</SectionBackLink>
+      </div>
     </div>
   );
 }

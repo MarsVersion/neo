@@ -1,3 +1,5 @@
+import SectionBackLink from '@/components/SectionBackLink';
+
 export default function ContributorPage({ params }: { params: { slug: string } }) {
   return (
     <div className="container section">
@@ -5,6 +7,15 @@ export default function ContributorPage({ params }: { params: { slug: string } }
       <p className="text-medium" style={{ color: 'var(--color-text-secondary)', marginTop: '1rem' }}>
         Profile and contributions from: {params.slug}
       </p>
+      <div
+        style={{
+          marginTop: '3rem',
+          paddingTop: '2rem',
+          borderTop: '1px solid var(--color-border)'
+        }}
+      >
+        <SectionBackLink href="/contributors">Contributors</SectionBackLink>
+      </div>
     </div>
   );
 }
