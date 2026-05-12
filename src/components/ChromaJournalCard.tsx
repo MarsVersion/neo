@@ -40,16 +40,13 @@ export default function ChromaJournalCard({ entry }: ChromaJournalCardProps) {
 
   return (
     <Link
-      href={`/journal/${entry.slug}`}
+      href={`/journal/${entry.slug}/`}
       style={{
         textDecoration: 'none',
         color: 'inherit'
       }}
     >
       <div className="chroma-card chroma-card--has-subtitle" ref={cardRef}>
-        <div className="chroma-overlay"></div>
-        <div className="chroma-fade"></div>
-
         <div className="chroma-img-wrapper">
           <img
             src={entry.image}

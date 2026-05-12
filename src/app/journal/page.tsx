@@ -33,6 +33,53 @@ export default function Journal() {
           <ChromaJournalCard key={entry.slug} entry={entry} />
         ))}
       </div>
+
+      <div
+        style={{
+          borderTop: '1px solid var(--color-border)',
+          paddingTop: '4rem',
+          textAlign: 'center',
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: 'var(--font-headline)',
+            fontSize: '2.2rem',
+            fontWeight: '400',
+            color: 'var(--color-text-primary)',
+            marginBottom: '1rem',
+          }}
+        >
+          Submit your thoughts to the Journal.
+        </h3>
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1.4rem',
+            color: 'var(--color-text-secondary)',
+            lineHeight: 1.6,
+            marginBottom: '2rem',
+          }}
+        >
+
+        </p>
+        <div style={{ display: 'inline-block' }}>
+          <a
+            href="mailto:yes@neoslow.com"
+            style={{
+              fontFamily: 'var(--font-label)',
+              fontSize: '1.1rem',
+              color: 'var(--color-accent)',
+              textDecoration: 'none',
+              opacity: 0.8,
+              transition: 'opacity 0.2s ease',
+            }}
+            className="submit-link"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

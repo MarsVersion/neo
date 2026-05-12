@@ -1,4 +1,9 @@
 import SectionBackLink from '@/components/SectionBackLink';
+import { contributors } from '@/lib/contributors';
+
+export async function generateStaticParams() {
+  return contributors.map((c) => ({ slug: c.slug }));
+}
 
 export default function ContributorPage({ params }: { params: { slug: string } }) {
   return (
@@ -14,7 +19,7 @@ export default function ContributorPage({ params }: { params: { slug: string } }
           borderTop: '1px solid var(--color-border)'
         }}
       >
-        <SectionBackLink href="/contributors">Contributors</SectionBackLink>
+        <SectionBackLink href="/contributors/">Contributors</SectionBackLink>
       </div>
     </div>
   );

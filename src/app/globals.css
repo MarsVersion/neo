@@ -8,8 +8,9 @@
   --color-border: #2a2a2a;
   
   --font-body: var(--font-urbanist);
-  --font-headline: var(--font-inter);
-  --font-label: var(--font-inter);
+  /* Inter is set on <html> via next/font; fall back to Urbanist if a host strips font CSS */
+  --font-headline: var(--font-inter, var(--font-urbanist));
+  --font-label: var(--font-inter, var(--font-urbanist));
   
   /* Chroma Grid Variables */
   --card-gradient: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
@@ -23,7 +24,10 @@
 }
 
 html {
+  height: 100%;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -31,8 +35,25 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App shell: replaces Tailwind-only classes on <body>/<main> (Tailwind is not installed). */
+.site-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.site-page {
+  width: 100%;
+  min-width: 0;
 }
 
 a {

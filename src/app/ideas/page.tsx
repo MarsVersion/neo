@@ -58,11 +58,11 @@ export default function IdeasPage() {
           lineHeight: 1.6,
           marginBottom: '2rem'
         }}>
-          Selected contributions may be developed into published entries.
+         
         </p>
         <div style={{ display: 'inline-block' }}>
           <a 
-            href="mailto:contact@neo-slow.com"
+            href="mailto:yes@neoslow.com"
             style={{
               fontFamily: 'var(--font-label)',
               fontSize: '1.1rem',

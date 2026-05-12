@@ -38,7 +38,7 @@ function hexToSpaceSeparatedRgb(hex: string): string {
 const BUBBLES: Bubble[] = [
   {
     label: 'Unrealized Ideas',
-    href: '/ideas',
+    href: '/ideas/',
     color: '#0F3D2E',
     className: styles.bubblePosition1,
     sizeClass: styles.bubbleSize280,
@@ -51,7 +51,7 @@ const BUBBLES: Bubble[] = [
   },
   {
     label: 'Contributors',
-    href: '/contributors',
+    href: '/contributors/',
     color: '#3F6B3A',
     className: styles.bubblePosition2,
     sizeClass: styles.bubbleSize320,
@@ -64,7 +64,7 @@ const BUBBLES: Bubble[] = [
   },
   {
     label: 'Journal',
-    href: '/journal',
+    href: '/journal/',
     color: '#2E8B57',
     className: styles.bubblePosition3,
     sizeClass: styles.bubbleSize280,

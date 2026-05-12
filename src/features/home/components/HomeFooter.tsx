@@ -48,10 +48,10 @@ export default function HomeFooter() {
                 flexDirection: 'column',
                 gap: '0.5rem'
               }}>
-                <a href="/archive" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+                <a href="/archive/" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   Archive
                 </a>
-                <a href="/contributors" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+                <a href="/contributors/" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   Contributors
                 </a>
               </div>
@@ -72,13 +72,13 @@ export default function HomeFooter() {
                 flexDirection: 'column',
                 gap: '0.5rem'
               }}>
-                <a href="/journal" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+                <a href="/journal/" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   Journal
                 </a>
-                <a href="/map" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+                <a href="/map/" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   Map
                 </a>
-                <a href="/about" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+                <a href="/about/" style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                   About
                 </a>
               </div>

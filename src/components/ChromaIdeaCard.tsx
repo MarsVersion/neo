@@ -40,7 +40,7 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
 
   return (
     <Link
-      href={`/ideas/${idea.slug}`}
+      href={`/ideas/${idea.slug}/`}
       style={{
         textDecoration: 'none',
         color: 'inherit'
@@ -50,12 +50,9 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
         className={idea.subtitle ? 'chroma-card chroma-card--has-subtitle' : 'chroma-card'}
         ref={cardRef}
       >
-        <div className="chroma-overlay"></div>
-        <div className="chroma-fade"></div>
-        
         <div className="chroma-img-wrapper">
-          <img 
-            src={idea.image} 
+          <img
+            src={idea.image}
             alt={idea.title}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -63,16 +60,20 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
             }}
           />
         </div>
-        
+
         <div className="chroma-info">
           <div className="name">{idea.title}</div>
           {idea.subtitle ? (
             <div className="role chroma-card-subtitle">{idea.subtitle}</div>
           ) : null}
-          <div className="role">{idea.type} ({idea.year})</div>
+          <div className="role">
+            {idea.type} ({idea.year})
+          </div>
           <div className="tags">
             {idea.tags.map((tag, index) => (
-              <span key={index} className="tag">{tag}</span>
+              <span key={index} className="tag">
+                {tag}
+              </span>
             ))}
           </div>
         </div>

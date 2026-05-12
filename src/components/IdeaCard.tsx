@@ -10,7 +10,7 @@ interface IdeaCardProps {
 export default function IdeaCard({ idea }: IdeaCardProps) {
   return (
     <Link
-      href={`/ideas/${idea.id}`}
+      href={`/ideas/${idea.id}/`}
       style={{
         textDecoration: 'none',
         color: 'inherit'

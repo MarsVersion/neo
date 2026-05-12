@@ -1,4 +1,9 @@
 import SectionBackLink from '@/components/SectionBackLink';
+import { ideas } from '@/lib/ideasData';
+
+export async function generateStaticParams() {
+  return ideas.map((idea) => ({ slug: idea.slug }));
+}
 
 export default function IdeaPage({ params }: { params: { slug: string } }) {
   return (
@@ -14,7 +19,7 @@ export default function IdeaPage({ params }: { params: { slug: string } }) {
           borderTop: '1px solid var(--color-border)'
         }}
       >
-        <SectionBackLink href="/ideas">Ideas</SectionBackLink>
+        <SectionBackLink href="/ideas/">Ideas</SectionBackLink>
       </div>
     </div>
   );

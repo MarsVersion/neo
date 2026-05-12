@@ -40,20 +40,17 @@ export default function ChromaContributorCard({ contributor }: ChromaContributor
 
   return (
     <Link
-      href={`/contributors/${contributor.slug}`}
+      href={`/contributors/${contributor.slug}/`}
       style={{
         textDecoration: 'none',
         color: 'inherit'
       }}
     >
       <div className="chroma-card" ref={cardRef}>
-        <div className="chroma-overlay"></div>
-        <div className="chroma-fade"></div>
-        
         <div className="chroma-img-wrapper">
           {contributor.image ? (
-            <img 
-              src={contributor.image} 
+            <img
+              src={contributor.image}
               alt={contributor.name}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -61,22 +58,24 @@ export default function ChromaContributorCard({ contributor }: ChromaContributor
               }}
             />
           ) : (
-            <div style={{
-              width: '100%',
-              height: '200px',
-              backgroundColor: '#2a2a2a',
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-              fontSize: '1.2rem'
-            }}>
+            <div
+              style={{
+                width: '100%',
+                height: '200px',
+                backgroundColor: '#2a2a2a',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#666',
+                fontSize: '1.2rem'
+              }}
+            >
               {contributor.name}
             </div>
           )}
         </div>
-        
+
         <div className="chroma-info">
           <div className="name">{contributor.name}</div>
           <div className="role">{contributor.role}</div>

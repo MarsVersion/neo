@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import SectionBackLink from '@/components/SectionBackLink';
 import styles from './JournalArticleLayout.module.css';
 
-const DEFAULT_PARENT = { href: '/journal', label: 'Journal' } as const;
+const DEFAULT_PARENT = { href: '/journal/', label: 'Journal' } as const;
 
 export type JournalArticleLayoutProps = {
   title: string;

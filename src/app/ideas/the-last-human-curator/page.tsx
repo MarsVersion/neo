@@ -453,7 +453,7 @@ export default function TheLastHumanCurator() {
         paddingTop: '2rem'
       }}>
         <a
-          href="/ideas"
+          href="/ideas/"
           style={{
             display: 'inline-flex',
             alignItems: 'center',

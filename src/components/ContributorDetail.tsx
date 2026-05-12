@@ -164,7 +164,7 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
           marginTop: '3rem'
         }}
       >
-        <SectionBackLink href="/contributors">Contributors</SectionBackLink>
+        <SectionBackLink href="/contributors/">Contributors</SectionBackLink>
       </div>
     </div>
   );

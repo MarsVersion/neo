@@ -1,4 +1,6 @@
-'use client';
+"use client";
+
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -33,8 +35,60 @@ export default function Footer() {
           gap: '2rem',
           alignItems: 'center'
         }}>
-          <a 
-            href="/privacy" 
+          <Link
+            href="/privacy/"
+            prefetch={false}
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1.3rem",
+              fontWeight: "300",
+              color: "white",
+              textDecoration: "none",
+              transition: "opacity 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.7";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
+            }}
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="/contact/"
+            prefetch={false}
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1.3rem",
+              fontWeight: "300",
+              color: "white",
+              textDecoration: "none",
+              transition: "opacity 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.7";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
+            }}
+          >
+            Contact
+          </Link>
+        </div>
+        
+        {/* Right: Social + Copyright */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '2rem',
+          flexWrap: 'wrap',
+          justifyContent: 'flex-end'
+        }}>
+          <a
+            href="https://www.instagram.com/neos_low/"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '1.3rem',
@@ -50,13 +104,15 @@ export default function Footer() {
               e.currentTarget.style.opacity = '1';
             }}
           >
-            Privacy Policy
+            Instagram
           </a>
-          <a 
-            href="/contact" 
+          <a
+            href="https://www.facebook.com/profile.php?id=61589408591200"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize:'1.3rem',
+              fontSize: '1.3rem',
               fontWeight: '300',
               color: 'white',
               textDecoration: 'none',
@@ -69,86 +125,9 @@ export default function Footer() {
               e.currentTarget.style.opacity = '1';
             }}
           >
-            Contact
+            Facebook
           </a>
-        </div>
-        
-        {/* Right: Social + Copyright */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '2rem'
-        }}>
-          {/* Social Icons */}
-          <a 
-            href="https://instagram.com" 
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            style={{
-              color: 'var(--color-text-secondary)',
-              textDecoration: 'none',
-              transition: 'opacity 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '0.7';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '1';
-            }}
-          >
-            <svg 
-              width="30" 
-              height="30" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="1.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a 
-            href="https://facebook.com" 
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            style={{
-              color: 'var(--color-text-secondary)',
-              textDecoration: 'none',
-              transition: 'opacity 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '0.7';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '1';
-            }}
-          >
-            <svg 
-              width="30" 
-              height="30" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="1.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          
+
           {/* Copyright */}
           <p style={{
             fontFamily: 'var(--font-body)',

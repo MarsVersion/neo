@@ -10,7 +10,7 @@ interface ContributorCardProps {
 export default function ContributorCard({ contributor }: ContributorCardProps) {
   return (
     <Link
-      href={`/contributors/${contributor.slug}`}
+      href={`/contributors/${contributor.slug}/`}
       style={{
         textDecoration: 'none',
         color: 'inherit',
