@@ -6,7 +6,7 @@ export default function About() {
         fontSize: '4rem',
         fontWeight: '300',
         color: 'var(--color-text-primary)',
-        marginBottom: '2rem',
+        marginBottom: '3rem',
         lineHeight: 1.8,
         textAlign: 'left'
       }}>
@@ -136,7 +136,14 @@ export default function About() {
             Initiated by
           </h3>
           <p style={{ marginBottom: '1.5rem', lineHeight: 1.8 }}>
-            Neo-Slow is developed as an independent practice by <span style={{ fontWeight: '800' }}>Jung Me Chai</span>, a curator working across contemporary art, technology, and research.
+            Neo-Slow is developed as an independent practice by{' '}
+            <a
+              href="mailto:yes@neoslow.com"
+              style={{ fontWeight: '800', color: 'rgba(23, 255, 19, 0.606)' }}
+            >
+              Jung Me Chai
+            </a>
+            , a curator working across contemporary art, technology, and research.
           </p>
           <p style={{ marginBottom: '1.5rem', lineHeight: 1.8 }}>
             She is a curator and former director of <span style={{ fontWeight: '800' }}>DISKURS Berlin</span>, and developed <span style={{ fontWeight: '800' }}>Busy Mars</span>, an AI-based platform for discovering artists, curators, and cultural practitioners. Her work spans exhibitions, biennials, and institutional collaborations in Europe and Korea, alongside writing on contemporary art.
@@ -153,6 +160,50 @@ export default function About() {
           </p>
         </section>
       </div>
+      <div style={{ marginBottom: '1.5rem', lineHeight: 1.8 }}>
+            <p style={{ marginBottom: '0.75rem', fontWeight: '600' }}>Links</p>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.35rem',
+              }}
+            >
+              <li>
+                <a
+                  href="https://hybridcurator.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'rgba(23, 255, 19, 0.606)' }}
+                >
+                  HybridCurator
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.busymars.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'rgba(23, 255, 19, 0.606)' }}
+                >
+                  Busy Mars
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.discursus.info/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'rgba(23, 255, 19, 0.606)' }}
+                >
+                  Discursus
+                </a>
+              </li>
+            </ul>
+          </div>
     </div>
   );
 }

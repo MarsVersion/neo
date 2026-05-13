@@ -93,7 +93,7 @@
   position: relative;
   z-index: 10;
   padding: 1.25rem;
-  color: #fff;
+  color: #f4bf5a;
   font-family: system-ui, sans-serif;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@
 
 .chroma-info .role {
   font-size: 0.94rem;
-  color: #ccc;
+  color: #f4bf5a !important;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;

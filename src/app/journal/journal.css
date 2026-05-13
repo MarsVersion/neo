@@ -8,3 +8,7 @@
 .journal-page .chroma-info .role {
   color: #ffffff !important;
 }
+
+.journal-page .chroma-info .role.chroma-card-subtitle {
+  color: rgba(23, 255, 19, 0.606) !important;
+}

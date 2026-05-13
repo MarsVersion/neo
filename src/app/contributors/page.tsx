@@ -4,11 +4,11 @@ import './contributors.css';
 
 export default function Contributors() {
   return (
-    <div style={{ maxWidth: '1800px', margin: '0 auto', padding: '16rem 2rem' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16rem 2rem' }}>
       <h1 style={{ 
         fontFamily: 'var(--font-headline)', 
-        fontSize: '5rem',
-        fontWeight: '600',
+        fontSize: '4rem',
+        fontWeight: '300',
         color: 'var(--color-text-primary)',
         marginBottom: '1rem',
         lineHeight: 1.2
@@ -39,17 +39,17 @@ export default function Contributors() {
       {/* Call to Action */}
       <div style={{
         borderTop: '1px solid var(--color-border)',
-        paddingTop: '4rem',
+        paddingTop: '9rem',
         textAlign: 'center'
       }}>
         <h3 style={{
           fontFamily: 'var(--font-headline)',
-          fontSize: '2.2rem',
-          fontWeight: '400',
+          fontSize: '2rem',
+          fontWeight: '300',
           color: 'var(--color-text-primary)',
           marginBottom: '1rem'
         }}>
-          Join the Archive
+          Join the Contributors
         </h3>
         <p style={{
           fontFamily: 'var(--font-body)',
@@ -73,7 +73,7 @@ export default function Contributors() {
             }}
             className="submit-link"
           >
-            Submit an Idea
+            Submit Your Thoughts
           </a>
         </div>
       </div>

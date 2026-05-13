@@ -5,12 +5,17 @@ export async function generateStaticParams() {
   return ideas.map((idea) => ({ slug: idea.slug }));
 }
 
-export default function IdeaPage({ params }: { params: { slug: string } }) {
+export default async function IdeaPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   return (
     <div className="container section">
-      <h1 className="text-large">Idea: {params.slug}</h1>
+      <h1 className="text-large">Idea: {slug}</h1>
       <p className="text-medium" style={{ color: 'var(--color-text-secondary)', marginTop: '1rem' }}>
-        Exploring the unrealized idea: {params.slug}
+        Exploring the unrealized idea: {slug}
       </p>
       <div
         style={{

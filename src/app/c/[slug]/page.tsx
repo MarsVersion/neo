@@ -5,12 +5,17 @@ export async function generateStaticParams() {
   return contributors.map((c) => ({ slug: c.slug }));
 }
 
-export default function ContributorPage({ params }: { params: { slug: string } }) {
+export default async function ContributorPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   return (
     <div className="container section">
-      <h1 className="text-large">Contributor: {params.slug}</h1>
+      <h1 className="text-large">Contributor: {slug}</h1>
       <p className="text-medium" style={{ color: 'var(--color-text-secondary)', marginTop: '1rem' }}>
-        Profile and contributions from: {params.slug}
+        Profile and contributions from: {slug}
       </p>
       <div
         style={{
