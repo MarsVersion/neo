@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { Contributor } from '@/lib/contributors';
 import { useEffect, useRef } from 'react';
 
@@ -39,14 +39,14 @@ export default function ChromaContributorCard({ contributor }: ChromaContributor
   }, []);
 
   return (
-    <Link
-      href={`/contributors/${contributor.slug}/`}
+    <a
+      href={withBasePath(`/contributors/${contributor.slug}/`)}
       style={{
         textDecoration: 'none',
         color: 'inherit'
       }}
     >
-      <div className="chroma-card" ref={cardRef}>
+      <div className="chroma-card chroma-card--has-subtitle" ref={cardRef}>
         <div className="chroma-img-wrapper">
           {contributor.image ? (
             <img
@@ -59,16 +59,16 @@ export default function ChromaContributorCard({ contributor }: ChromaContributor
             />
           ) : (
             <div
+              className="contributor-card-placeholder"
               style={{
-                width: '100%',
-                height: '200px',
                 backgroundColor: '#2a2a2a',
-                borderRadius: '10px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#666',
-                fontSize: '1.2rem'
+                fontSize: '1.05rem',
+                textAlign: 'center',
+                padding: '0.75rem'
               }}
             >
               {contributor.name}
@@ -81,6 +81,6 @@ export default function ChromaContributorCard({ contributor }: ChromaContributor
           <div className="role">{contributor.role}</div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

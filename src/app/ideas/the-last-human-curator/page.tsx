@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from '@/lib/sitePath';
+
 export default function TheLastHumanCurator() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
@@ -43,7 +45,7 @@ export default function TheLastHumanCurator() {
         marginBottom: '3rem'
       }}>
         <img
-          src="/assets/nav_images/tlhc.jpg"
+          src={withBasePath("/assets/nav_images/tlhc.jpg")}
           alt="The Last Human Curator"
           style={{
             width: '100%',
@@ -453,7 +455,7 @@ export default function TheLastHumanCurator() {
         paddingTop: '2rem'
       }}>
         <a
-          href="/ideas/"
+          href={withBasePath('/ideas/')}
           style={{
             display: 'inline-flex',
             alignItems: 'center',

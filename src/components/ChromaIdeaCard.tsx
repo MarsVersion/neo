@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { Idea } from '@/lib/ideasData';
 import { useEffect, useRef } from 'react';
 
@@ -39,17 +39,14 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
   }, []);
 
   return (
-    <Link
-      href={`/ideas/${idea.slug}/`}
+    <a
+      href={withBasePath(`/ideas/${idea.slug}/`)}
       style={{
         textDecoration: 'none',
         color: 'inherit'
       }}
     >
-      <div
-        className={idea.subtitle ? 'chroma-card chroma-card--has-subtitle' : 'chroma-card'}
-        ref={cardRef}
-      >
+      <div className="chroma-card chroma-card--has-subtitle" ref={cardRef}>
         <div className="chroma-img-wrapper">
           <img
             src={idea.image}
@@ -78,6 +75,6 @@ export default function ChromaIdeaCard({ idea }: ChromaIdeaCardProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

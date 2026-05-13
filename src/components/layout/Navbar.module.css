@@ -19,11 +19,15 @@
   text-decoration: none;
 }
 
+.navbarLogo a:hover {
+  color: #a39efe;
+}
+
 .navbarLinks {
   display: flex;
-  gap: 1.5rem;
+  gap: 3rem;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .navbarLinks a {
@@ -51,7 +55,7 @@
   }
   
   .navbarLinks {
-    gap: 1rem;
+    gap: 1.25rem;
     font-size: 0.875rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,7 +72,7 @@
   }
   
   .navbarLinks {
-    gap: 0.75rem;
+    gap: 1.2rem;
     font-size: 0.75rem;
   }
 }

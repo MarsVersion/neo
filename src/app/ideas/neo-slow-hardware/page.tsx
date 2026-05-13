@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from '@/lib/sitePath';
+
 export default function NeoSlowHardware() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
@@ -43,7 +45,7 @@ export default function NeoSlowHardware() {
         marginBottom: '3rem'
       }}>
         <img 
-          src="/assets/images/UP-NS-Hardware.jpg" 
+          src={withBasePath("/assets/images/UP-NS-Hardware.jpg")} 
           alt="Neo-Slow Hardware concept"
           style={{
             width: '100%',
@@ -501,7 +503,7 @@ export default function NeoSlowHardware() {
         paddingTop: '2rem'
       }}>
         <a 
-          href="/ideas/" 
+          href={withBasePath('/ideas/')} 
           style={{
             display: 'inline-flex',
             alignItems: 'center',

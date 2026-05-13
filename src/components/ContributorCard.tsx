@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { Contributor } from '@/lib/contributors';
 
 interface ContributorCardProps {
@@ -9,8 +9,8 @@ interface ContributorCardProps {
 
 export default function ContributorCard({ contributor }: ContributorCardProps) {
   return (
-    <Link
-      href={`/contributors/${contributor.slug}/`}
+    <a
+      href={withBasePath(`/contributors/${contributor.slug}/`)}
       style={{
         textDecoration: 'none',
         color: 'inherit',
@@ -116,6 +116,6 @@ export default function ContributorCard({ contributor }: ContributorCardProps) {
           <span style={{ fontSize: '0.8rem' }}>→</span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

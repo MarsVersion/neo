@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from '@/lib/sitePath';
+
 export default function RealSymbolicImaginary() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
@@ -43,7 +45,7 @@ export default function RealSymbolicImaginary() {
         marginBottom: '3rem'
       }}>
         <img 
-          src="/assets/images/UP-RSI.jpg" 
+          src={withBasePath("/assets/images/UP-RSI.jpg")} 
           alt="Real, Symbolic, Imaginary project"
           style={{
             width: '100%',
@@ -349,7 +351,7 @@ export default function RealSymbolicImaginary() {
         paddingTop: '2rem'
       }}>
         <a 
-          href="/ideas/" 
+          href={withBasePath('/ideas/')} 
           style={{
             display: 'inline-flex',
             alignItems: 'center',

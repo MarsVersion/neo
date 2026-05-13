@@ -1,3 +1,5 @@
+import { withBasePath } from '@/lib/sitePath';
+
 export default function JournalSection() {
   const entries = [
     { date: "2024.03.15", title: "On the nature of unrealized ideas" },
@@ -39,7 +41,7 @@ export default function JournalSection() {
               fontWeight: 400,
               marginBottom: '0.5rem'
             }}>
-              <a href="/journal/" style={{ color: 'var(--color-text-primary)' }}>
+              <a href={withBasePath('/journal/')} style={{ color: 'var(--color-text-primary)' }}>
                 {entry.title}
               </a>
             </h3>
@@ -49,7 +51,7 @@ export default function JournalSection() {
       
       <div style={{ marginTop: '2rem' }}>
         <a 
-          href="/journal/"
+          href={withBasePath('/journal/')}
           style={{
             fontFamily: 'var(--font-label)',
             color: 'var(--color-accent)',

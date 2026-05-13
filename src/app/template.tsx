@@ -1,16 +1,4 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-
-/**
- * Forces a fresh subtree on each navigation so client state from the previous
- * route (e.g. Framer Motion, listeners) cannot leave the next page blank.
- */
+/** Wraps each route segment for `.site-page` layout; server-only (static export friendly). */
 export default function Template({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  return (
-    <div key={pathname} className="site-page">
-      {children}
-    </div>
-  );
+  return <div className="site-page">{children}</div>;
 }

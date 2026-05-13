@@ -16,7 +16,7 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
             width: '200px',
             height: '200px',
             borderRadius: '10%',
-            backgroundColor: 'var(--color-border)',
+            backgroundColor: 'rgba(12, 12, 12, 0.9)',
             margin: '0 auto 3rem',
             overflow: 'hidden'
           }}>
@@ -26,7 +26,8 @@ export default function ContributorDetail({ contributor }: ContributorDetailProp
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'cover'
+                objectFit: 'contain',
+                objectPosition: 'center center'
               }}
             />
           </div>

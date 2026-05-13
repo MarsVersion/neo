@@ -1,10 +1,11 @@
 import { contributors } from '@/lib/contributors';
 import ChromaContributorCard from '@/components/ChromaContributorCard';
+import '../ideas/ideas.css';
 import './contributors.css';
 
 export default function Contributors() {
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16rem 2rem' }}>
+    <div className="contributors-page" style={{ maxWidth: '1200px', margin: '0 auto', padding: '16rem 2rem' }}>
       <h1 style={{ 
         fontFamily: 'var(--font-headline)', 
         fontSize: '4rem',

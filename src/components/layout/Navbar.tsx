@@ -1,28 +1,18 @@
-import Link from "next/link";
+import { withBasePath } from "@/lib/sitePath";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLogo}>
-        <Link href="/" prefetch={false}>
-          Neo-Slow
-        </Link>
+        <a href={withBasePath("/")}>Neo-Slow</a>
       </div>
 
       <div className={styles.navbarLinks}>
-        <Link href="/ideas/" prefetch={false}>
-          Ideas
-        </Link>
-        <Link href="/contributors/" prefetch={false}>
-          Contributors
-        </Link>
-        <Link href="/journal/" prefetch={false}>
-          Journal
-        </Link>
-        <Link href="/about/" prefetch={false}>
-          About
-        </Link>
+        <a href={withBasePath("/ideas/")}>Ideas</a>
+        <a href={withBasePath("/contributors/")}>Contributors</a>
+        <a href={withBasePath("/journal/")}>Journal</a>
+        <a href={withBasePath("/about/")}>About</a>
       </div>
     </nav>
   );

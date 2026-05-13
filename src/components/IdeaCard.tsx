@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { Idea } from '@/lib/ideas';
 
 interface IdeaCardProps {
@@ -9,8 +9,8 @@ interface IdeaCardProps {
 
 export default function IdeaCard({ idea }: IdeaCardProps) {
   return (
-    <Link
-      href={`/ideas/${idea.id}/`}
+    <a
+      href={withBasePath(`/ideas/${idea.id}/`)}
       style={{
         textDecoration: 'none',
         color: 'inherit'
@@ -94,6 +94,6 @@ export default function IdeaCard({ idea }: IdeaCardProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

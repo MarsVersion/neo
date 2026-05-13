@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --webpack",
     "dev:turbo": "next dev --turbo",
-    "build": "next build",
+    "build": "next build --webpack",
+    "export:preview": "npx --yes serve@latest -l 3000 out",
     "start": "next start",
     "lint": "eslint"
   },

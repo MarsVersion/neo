@@ -1,124 +1,54 @@
-/* Chroma Grid Styles for Contributors */
+/* Listing uses shared chroma from ideas.css (same as Journal). Only contributor-specific text colors. */
 
 .submit-link:hover {
   opacity: 1 !important;
 }
 
-.chroma-grid {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 720px);
-  gap: 5rem;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .chroma-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
-    gap: 1rem;
-    padding: 0.5rem;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .chroma-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 1rem;
-  }
-}
-
-.chroma-card {
-  position: relative;
+/* Circular portraits: fixed diameter, centered, cover crop (listing only). */
+.contributors-page .chroma-card--has-subtitle .chroma-img-wrapper {
+  flex: 0 0 260px;
+  height: 260px;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 720px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #333;
-  transition: border-color 0.3s ease;
-  background: var(--card-gradient);
-
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-  --spotlight-color: rgba(255, 255, 255, 0.3);
-}
-
-.chroma-card:hover {
-  border-color: rgb(0, 183, 0);
-}
-
-.chroma-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 2;
-}
-
-.chroma-card:hover::before {
-  opacity: 1;
-}
-
-.chroma-img-wrapper {
-  position: relative;
-  z-index: 1;
-  height: 600px;
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
   box-sizing: border-box;
   background: transparent;
-  transition: background 0.3s ease;
 }
 
-.chroma-img-wrapper img {
-  width: 100%;
-  height: 100%;
+.contributors-page .chroma-img-wrapper img {
+  width: 220px;
+  height: 220px;
+  aspect-ratio: 1;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 10px;
+  object-position: center center;
   display: block;
+  flex-shrink: 0;
 }
 
-.chroma-info {
-  position: relative;
-  z-index: 10;
-  padding: 1.25rem;
+.contributors-page .chroma-img-wrapper .contributor-card-placeholder {
+  width: 220px;
+  height: 220px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Space between portrait and name/role (no upward overlap into the circle). */
+.contributors-page .chroma-card--has-subtitle .chroma-info {
+  margin-top: 0.75rem;
+}
+
+.contributors-page .chroma-info {
   color: #f4bf5a;
-  font-family: system-ui, sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
-  border-radius: 0 0 18px 18px;
-  height: 120px;
-  margin-top: -20px;
 }
 
-.chroma-info .name {
-  font-size: 1.21rem;
-  font-weight: 600;
+.contributors-page .chroma-info .name {
   color: #fff;
-  line-height: 1.3;
-  margin-bottom: 0.25rem;
 }
 
-.chroma-info .role {
-  font-size: 0.94rem;
+.contributors-page .chroma-info .role {
   color: #f4bf5a !important;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }

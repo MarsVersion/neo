@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { withBasePath } from "@/lib/sitePath";
 
 export default function Footer() {
   return (
@@ -35,9 +35,8 @@ export default function Footer() {
           gap: '2rem',
           alignItems: 'center'
         }}>
-          <Link
-            href="/privacy/"
-            prefetch={false}
+          <a
+            href={withBasePath("/privacy/")}
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "1.3rem",
@@ -54,10 +53,9 @@ export default function Footer() {
             }}
           >
             Privacy Policy
-          </Link>
-          <Link
-            href="/contact/"
-            prefetch={false}
+          </a>
+          <a
+            href={withBasePath("/contact/")}
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "1.3rem",
@@ -74,7 +72,7 @@ export default function Footer() {
             }}
           >
             Contact
-          </Link>
+          </a>
         </div>
         
         {/* Right: Social + Copyright */}

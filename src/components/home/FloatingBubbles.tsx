@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { motion, useReducedMotion } from 'framer-motion';
 import styles from './FloatingBubbles.module.css';
 
@@ -86,9 +86,9 @@ export default function FloatingBubbles() {
     <div className={`${styles.wrap} flex justify-center`}>
       <div className={`${styles.bubbles}`} aria-label="Neo-Slow navigation bubbles">
         {BUBBLES.map((bubble) => (
-          <Link
+          <a
             key={bubble.href}
-            href={bubble.href}
+            href={withBasePath(bubble.href)}
             className={`home-bubble-link ${styles.bubbleLink} inline-flex`}
           >
             <motion.div
@@ -119,7 +119,7 @@ export default function FloatingBubbles() {
               <span className={styles.bubbleInner} aria-hidden />
               <span className={styles.bubbleLabel}>{bubble.label}</span>
             </motion.div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

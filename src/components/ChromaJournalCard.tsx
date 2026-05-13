@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { withBasePath } from '@/lib/sitePath';
 import { useEffect, useRef } from 'react';
 import { JournalEntry } from '@/lib/journalData';
 
@@ -39,8 +39,8 @@ export default function ChromaJournalCard({ entry }: ChromaJournalCardProps) {
   }, []);
 
   return (
-    <Link
-      href={`/journal/${entry.slug}/`}
+    <a
+      href={withBasePath(`/journal/${entry.slug}/`)}
       style={{
         textDecoration: 'none',
         color: 'inherit'
@@ -63,7 +63,7 @@ export default function ChromaJournalCard({ entry }: ChromaJournalCardProps) {
           <div className="role chroma-card-subtitle">{entry.subtitle}</div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

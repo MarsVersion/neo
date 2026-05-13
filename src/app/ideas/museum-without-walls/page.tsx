@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from '@/lib/sitePath';
+
 export default function MuseumWithoutWalls() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', paddingTop: '4rem', paddingBottom: '4rem' }}>
@@ -43,7 +45,7 @@ export default function MuseumWithoutWalls() {
         marginBottom: '3rem'
       }}>
         <img
-          src="/assets/nav_images/MWW1.png"
+          src={withBasePath("/assets/nav_images/MWW1.png")}
           alt="Museum Without Walls"
           style={{
             width: '100%',
@@ -286,7 +288,7 @@ export default function MuseumWithoutWalls() {
         paddingTop: '2rem'
       }}>
         <a
-          href="/ideas/"
+          href={withBasePath('/ideas/')}
           style={{
             display: 'inline-flex',
             alignItems: 'center',
